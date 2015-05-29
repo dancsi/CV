@@ -1,0 +1,172 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+%
+% (c) 2012 Scott Clark <sc932@cornell.edu> cam.cornell.edu/~sc932
+%
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[a4paper]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft, array}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\input glyphtounicode
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-2pt}}
+%-----------------------------------------------------------
+
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Daniel Silađi} & \textbf{Contact} \\
+Mathematics Student & E-mail: szilagyi.d@gmail.com \\
+FAMNIT, Univerza na Primorskem & Mobile: +381 (0)64 973 9508 \\
+\end{tabular*}
+\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item \ressubheading{Univerza na Primorskem}{Koper, Slovenia}{Mathematics BSc}{2014 - present}
+
+\item \ressubheading{Gimnazija Jovan Jovanović Zmaj}{Novi Sad, Serbia}{High school}{2010 - 2014}
+\begin{itemize}
+	\item Class specialized for mathematics, physics and computer science
+	\item GPA: 5.00/5.00
+	\item Final year project: \emph{``Some applications of group theory''}
+\end{itemize}
+
+\item \ressubheading{Osnovna škola pri gimnaziji Jovan Jovanović Zmaj}{Novi Sad, Serbia}{Elementary School}{2008 - 2010}
+\begin{itemize}
+	\item Spent last two years of elementary education in an experimental class specialized for mathematics, physics and computer science
+	\item GPA: 5.00/5.00
+\end{itemize}
+
+\item \ressubheading{Osnovna škola Jovan Popović}{Novi Sad, Serbia}{Elementary School}{2002 - 2008}
+\begin{itemize}
+	\item Finished first six grades before moving to the experimental class
+	\item GPA: 5.00/5.00
+\end{itemize}
+
+\end{itemize}
+
+\resheading{Experience}
+
+\begin{itemize}
+	\item \ressubheading{Petnica Science Center}{Petnica, Serbia}{Junior Associate at the Physics Seminar}{2015 - present}
+	\item \ressubheading{PKP project \emph{Absorption of foreign substances in the sea}}{Koper, Slovenia}{Student project organized by the University of Primorska}{2015}
+	\begin{itemize}
+		\item Worked as a part of a team, designing and manufacturing the housing and electronics for an underwater data-collection module
+	\end{itemize}
+	\item \ressubheading{Petnica Science Center}{Petnica, Serbia}{High School science projects}{2011 - 2014}
+	\begin{itemize}
+		\item Daniel Silađi, Ognjen Stanisavljević: \emph{``Simulation of pedestrian traffic in evacuation situations''}. Mentored by Miroslav Bogdanović, and presented at the annual Petnica Autumn Conference in 2014.
+		\item Daniel Silađi, Kristina Silađi: \emph{``Embedding graphs in books''}. Mentored by Stefan Mihajlović, and presented at the annual Petnica Autumn Conference in 2013.
+		\item Daniel Silađi: \emph{``Simulating fluids in two dimensions''}. Presented at the annual Petnica Autumn Conference in 2012.
+		\item Daniel Silađi: \emph{``Genetic Algorithms and the Travelling-Salesman Problem''}. Presented at the annual Petnica Autumn Conference in 2011.
+		\item All 4 papers have been or will be published in the respective conference proceedings (\emph{Petničke Sveske})
+	\end{itemize}
+	\item \ressubheading{Višnjan Summer School of Science}{Višnjan, Croatia}{Science/engineering project}{2014}
+	\begin{itemize}
+		\item Worked as a part of a team and built a fully functional remotely operated underwater vehicle
+		\item Programmed the data collection and motor controller modules 
+	\end{itemize}
+	\item \ressubheading{Modern Mathematics International Summer School for students}{Bremen, Germany}{Mathematics summer school for high school and university students}{2013}
+\end{itemize}
+
+\resheading{Competitions and awards}
+\begin{itemize}
+	\item \ressubheading{Univerzitetni programerski maraton}{Slovenia}{National qualifications for the ACM regionals}{2015 - present}
+	\item \ressubheading{Serbian national competitions}{Serbia}{Informatics, Mathematics, Physics}{2010 - 2014}
+	\begin{itemize}
+		\item Regularly competed in mathematics, physics and informatics competitions, up to the national level
+		\item \textbf{Informatics (Computer Science):} Serbian Olympiad in Informatics (2014 -- second prize, 2012, 2011 -- third prize), National Competition (2014, 2011 -- second prize, 2012 -- honorable mention)
+		\item \textbf{Mathematics:} National Competition 2012 -- honorable mention
+		\item \textbf{Physics:} National Competition 2012 -- honorable mention
+	\end{itemize}
+	\item \ressubheading{Diplomas at the end of High School}{Novi Sad, Serbia}{Awarded at the graduation ceremony}{2014}
+	\begin{itemize}
+		\item Vuk Karadžić award for 5.00/5.00 GPA
+		\item Special Diplomas for successfully participating mathematics, physics and computer science competitions during high school
+		\item Jovan Jovanović Zmaj plaque, awarded to the best student in the generation
+		\item Dušan Kešelj plaque, awarded to the most distinguished student in the area of informatics in the generation
+	\end{itemize}
+	\item \ressubheading{Energija Znanja scholarship}{Serbia}{One year monthly scholarship awarded by NIS}{2013 - 2014}
+	\item \ressubheading{KöMaL's informatics problem solving contest}{Budapest, Hungary}{Correspondence contest organized by KöMaL (Középiskolai Matematikai és Fizikai Lapok)}{2011 - 2013}
+	\begin{itemize}
+		\item Placed on the 5th place at the end of both 2012 and 2013
+		\item Invited twice to the annual conference organized at Eötvös Loránd Tudományegyetem (ELTE) for the best competitors in mathematics, informatics and physics
+	\end{itemize}
+	\item \ressubheading{Dositeja Award}{Serbia}{Awarded by the Ministry of Education for exceptional results at competitions}{2011, 2012}
+\end{itemize}
+
+\resheading{Skills}
+\begin{itemize}
+	\item \textbf{Mathematics}, in particular discrete mathematics and \textbf{graph theory}, \textbf{numerical methods}
+	\item Working knowledge of various \textbf{programming languages}: C/C++, Python, C\#, Java, Pascal, Prolog, Assembler (x86 in particular), MATLAB, Mathematica
+	\item Strong knowledge of \textbf{data structures and algorithms}, as well as some background in \textbf{theoretical computer science}
+	\item \textbf{Other technologies}: \LaTeX, Unix administration, Git, Microsoft Office
+	\item \textbf{Piano} -- played it during elementary and higher education, obtained basic music theory knowledge
+	\item \textbf{Karate} -- blue belt (5th kyu)
+\end{itemize}
+
+\newpage
+\resheading{Languages}
+\begin{itemize}
+	\item \textbf{English:} Fluent (Cambridge CPE diploma, CEFR level C2)
+	\item \textbf{Serbian, Hungarian:} Native
+	\item \textbf{French:} Intermediate (CEFR level B1 certificate)
+	\item \textbf{German, Russian, Slovenian:} Basic
+\end{itemize}
+
+\end{document}

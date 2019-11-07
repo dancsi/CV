@@ -1,272 +1,68 @@
 % !TeX program = pdflatex
+% !TeX spellcheck = en_US
+\documentclass[11pt,a4paper,sans]{styles/moderncv}
 
-% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
-% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
-% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
-%
-% (c) 2012 Scott Clark <sc932@cornell.edu> cam.cornell.edu/~sc932
-%
-%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+\moderncvstyle{classic}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 
-\documentclass[a4paper]{article}
-
-%PdfTeX settings for a correct UTF 8 Mapping
-%------------------------------------------------------
-\usepackage{ifpdf}
-\ifpdf    \input{glyphtounicode.tex}    %Part of modern distribution
-%%%\input{glyphtounicode-cmr.tex}     %Additionnal glyph: You must grab it from pdfx package
-\pdfgentounicode=1
-\else  %Place here the settings for other compilator
-\fi
-
-
-%Encoding + cmap (to get proper UTF8 mapping)
-%------------------------------------------------------
-\usepackage{cmap}
+% character encoding
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
 
-%AMS Math + UTF8 mapping of ams symbols
-%------------------------------------------------------
-\usepackage{amsmath, bm} 
-\usepackage{amssymb} % I load it after Fourier else I have more incorrect utf8 mapping (with \geqslant for example)
-%Correct UTF8 mapping for ams fonts
-\ifdefined\pdffontattr% \ifdefined is part of the e-TeX extension, which is part of any modern LaTeX compiler. 
-\immediate\pdfobj stream file {umsa.cmap}
-{\usefont{U}{msa}{m}{n}\pdffontattr\font{/ToUnicode \the\pdflastobj\space 0 R}}
-\immediate\pdfobj stream file {umsb.cmap}
-{\usefont{U}{msb}{m}{n}\pdffontattr\font{/ToUnicode \the\pdflastobj\space 0 R}}
-\fi
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
-\newlength{\outerbordwidth}
-\pagestyle{empty}
-\raggedbottom
-\raggedright
-\usepackage[svgnames]{xcolor}
-\usepackage{framed}
-\usepackage{tocloft, array}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-
-\input glyphtounicode
-
-%-----------------------------------------------------------
-%Edit these values as you see fit
-
-\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
-\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
-\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
-
-
-%-----------------------------------------------------------
-%Margin setup
-
-\setlength{\evensidemargin}{-0.25in}
-\setlength{\headheight}{0in}
-\setlength{\headsep}{0in}
-\setlength{\oddsidemargin}{-0.25in}
-\setlength{\paperheight}{11in}
-\setlength{\paperwidth}{8.5in}
-\setlength{\tabcolsep}{0in}
-\setlength{\textheight}{9.5in}
-\setlength{\textwidth}{7in}
-\setlength{\topmargin}{-0.3in}
-\setlength{\topskip}{0in}
-\setlength{\voffset}{0.1in}
-
-
-%-----------------------------------------------------------
-%Custom commands
-\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
-\newcommand{\resheading}[1]{\vspace{0pt}
-  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
-    \begin{shaded}
-\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
-    \end{shaded}
-  }\vspace{-5pt}
-}
-\newcommand{\ressubheading}[4]{
-\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
-		\textbf{#1} & #2 \\
-		\textit{#3} & \textit{#4} \\
-\end{tabular*}\vspace{-2pt}}
-%-----------------------------------------------------------
-
+% personal data
+\name{Dániel}{Szilágyi}
+\title{Computer Science PhD student}
+\address{IRIF, Université de Paris\\bâtiment Sophie Germain\\}{8 Place Aurélie Nemours}{Paris 75013, France}
+\phone[mobile]{+33~(6)~20~35~48~25}
+\email{dszilagyi@irif.fr}
+%\homepage{dancsi.net}
+\extrainfo{Alternate spelling: Daniel Silađi}
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 
 \begin{document}
 
-\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
-\textbf{\Large Szilágyi Dániel (Daniel Silađi)} & \textbf{Contact} \\
-Computer Science PhD Student & E-mail: dszilagyi@irif.fr \\
-IRIF, Université Paris Diderot & Mobile: +33 (0)6 20 35 48 25 \\
-\end{tabular*}
-\\
+\makecvtitle
+\section{Education}
+\cventry{2019--present}{PhD}{Theoretical Computer Science}{IRIF, Université de Paris}{}{Thesis topic: ``Quantum Algorithms for Optimization and Machine Learning'', supervised by Iordanis Kerenidis}
+\cventry{2017--2019}{MSc}{Theoretical Computer Science}{École Normale Supérieure de Lyon}{}{Thesis topic: ``A Quantum Interior-Point Method for Second-Order Cone Programming'', supervised by Iordanis Kerenidis}
+\cventry{2014--2017}{BSc}{Mathematics}{University of Primorska, Slovenia}{}{Thesis topic: ``Computational Methods for Polypeptide Origami Design'', supervised by Andrej Brodnik}
+\cventry{2010--2014}{High School}{Mathematics/Physics/Computer Science}{Gimnazija Jovan Jovanović Zmaj, Novi Sad, Serbia}{}{Final year project: ``Some Applications of Group Theory''}
 
+\section{Experience}
+\cventry{2019}{Research internship}{}{IRIF, Université de Paris}{}{Internship topic: ``A Quantum Interior-Point Method for Second-Order Cone Programming'', supervised by Iordanis Kerenidis}
+\cventry{2018}{Research internship}{}{LIP, École Normale Supérieure de Lyon}{}{Internship topic: ``Algorithmic Aspects of Quantum Shannon Theory'', supervised by Omar Fawzi}
+\cventry{2016}{Data science internship}{}{Microsoft Development Center, Serbia}{}{Worked on modeling and forecasting SQL Server performance in the Azure Cloud}
+\cventry{2015--present}{Teaching assistant}{}{Petnica Science Center, Serbia}{}{Mentoring talented high school students doing year-long research projects}
+\cventry{2015}{Teaching assistant}{}{Summer School of Science (S3), Croatia}{}{Mentored a team of 3 high school students for a Bluetooth indoor positioning science/engineering project}
+\cventry{2015}{Student job}{}{University of Primorska, Slovenia}{}{Worked as the embedded hardware/software specialist on the government-funded project titled ``Absorbtion of foreign substances in the sea''}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Education}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{itemize}
+\newpage
+% Publications
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications} 
 
-\item \ressubheading{IRIF, Université Paris Diderot}{Paris, France}{PhD studies, Theoretical Computer Science}{from September 2019}
-\begin{itemize}
-	\item Working on quantum machine learning under the supervision of prof. Iordanis Kerenidis
-\end{itemize}
+\section{Honors and awards}
+\cventry{2017--2019}{Scholarship}{Ampère Excellence Scholarship}{}{}{Awarded to the best international students at ENS Lyon}
+\cventry{2016}{Competition}{NASA SpaceApps challenge}{Slovenia}{}{Won 2nd place as a team at the national round of a 48h data science hackathon}
+\cventry{2015--2017}{Competition}{University Programming Marathon}{Slovenia}{}{Three-times university champion at the national ACM ICPC qualifiers}
+\cventry{2014--2017}{Scholarship}{University of Primorska Excellence Scholarship}{}{}{Awarded to the best students at the University}
+\cventry{2013--2014}{Scholarship}{``Energy of Knowledge'' Scholarship}{Serbia}{}{Awarded to the most successful competition participants}
+\cventry{2011--2014}{Award}{Dositeja Award}{Serbia}{}{Awarded to the most successful competition participants}
+\cventry{2010--2014}{Competition}{Serbian national high school competitions}{}{}{Successfully competed at the national level in mathematics, physics and computer science}
 
-\item \ressubheading{École normale supérieure de Lyon}{Lyon, France}{Master studies, Theoretical Computer Science}{2017 - 2019}
-\begin{itemize}
-	\item Finished the first year at the top of the class
-	\item Awarded the Ampère excellence scholarship for international students
-	\item Master thesis: ``A Quantum Interior-Point Method for Second-Order Cone Programming'', under the supervision of prof. Iordanis Kerenidis
-\end{itemize}
+\section{Languages}
+\cvitemwithcomment{Native}{Serbian, Hungarian}{}
+\cvitemwithcomment{Fluent}{English, French, Slovene}{}
+\cvitemwithcomment{Basic}{German, Russian}{}
 
-\item \ressubheading{University of Primorska}{Koper, Slovenia}{Mathematics BSc}{2014 - 2017}
-\begin{itemize}
-	\item Graduated with GPA: 10.00 (ranked 1st in the Mathematics degree program)
-	\item Bachelor thesis title: ``Computational methods for polypeptide origami design''
-\end{itemize}
-
-\item \ressubheading{Gimnazija Jovan Jovanović Zmaj}{Novi Sad, Serbia}{High school}{2010 - 2014}
-\begin{itemize}
-	\item Class specialized for mathematics, physics and computer science
-	\item GPA: 5.00/5.00
-	\item Final year project: \emph{``Some applications of group theory''}
-\end{itemize}
-
-\end{itemize}
-
-\resheading{Experience}
-
-\begin{itemize}
-	\item \ressubheading{IRIF, Université Paris Diderot}{Paris, France}{Research Intern}{2019}
-	\begin{itemize}
-		\item Second semester (M2) internship
-		\item Worked on a quantum interior point method for second-order conic programming, with prof. Iordanis Kerenidis
-		\item Paper accepted at ACM AFT 2019
-	\end{itemize}
-	\item \ressubheading{LIP, École normale supérieure de Lyon}{Lyon, France}{Research Intern}{2018}
-	\begin{itemize}
-		\item Three month summer internship (M1)
-		\item Worked on algorithmic aspects of quantum information theory, with prof. Omar Fawzi
-		\item Paper presented at IEEE ISIT 2019
-	\end{itemize}
-	\item \ressubheading{Microsoft Development Center Serbia}{Belgrade, Serbia}{Data Science Intern}{2016}
-	\begin{itemize}
-		\item Three month summer internship
-		\item Worked on modeling and forecasting SQL Server performance
-	\end{itemize}
-	\item \ressubheading{ELTE Summer School of Mathematics}{Budapest, Hungary}{Participant, Discrete Algorithms and Applications}{2016}
-	\item \ressubheading{Petnica Summer Institute of Machine Learning}{Petnica, Serbia}{Participant}{2015}
-	\begin{itemize}
-		\item Machine learning summer school organized by Microsoft Development Center Serbia
-		\item Worked on developing a model for local business classification, using logistic regression on real-world data from the Bing search engine
-	\end{itemize}
-	\item \ressubheading{Summer School of Science}{Požega, Croatia}{Project mentor}{2015}
-	\begin{itemize}
-		\item Mentored a team of 3 high school students on a project where they developed a system for near real time indoor positioning using a few Bluetooth low energy beacons, and a smartphone.
-	\end{itemize}
-	\item \ressubheading{Petnica Science Center}{Petnica, Serbia}{Teaching Assistant at the Physics Seminar}{2015 - present}
-	\item \ressubheading{PKP project \emph{Absorption of foreign substances in the sea}}{Koper, Slovenia}{Student project organized by the University of Primorska}{2015}
-	\begin{itemize}
-		\item Worked as a part of a team, designing and manufacturing the housing and electronics for an underwater data-collection module
-	\end{itemize}
-	\item \ressubheading{Petnica Science Center}{Petnica, Serbia}{High School science projects}{2011 - 2014}
-	\begin{itemize}
-		\item Daniel Silađi, Ognjen Stanisavljević: \emph{``Simulation of pedestrian traffic in evacuation situations''}. Mentored by Miroslav Bogdanović, and presented at the annual Petnica Autumn Conference in 2014.
-		\item Daniel Silađi, Kristina Silađi: \emph{``Embedding graphs in books''}. Mentored by Stefan Mihajlović, and presented at the annual Petnica Autumn Conference in 2013.
-		\item Daniel Silađi: \emph{``Simulating fluids in two dimensions''}. Presented at the annual Petnica Autumn Conference in 2012.
-		\item Daniel Silađi: \emph{``Genetic Algorithms and the Travelling-Salesman Problem''}. Presented at the annual Petnica Autumn Conference in 2011.
-		\item All 4 papers have been or will be published in the respective conference proceedings (\emph{Petničke Sveske})
-	\end{itemize}
-	\item \ressubheading{Višnjan Summer School of Science}{Višnjan, Croatia}{Science/engineering project}{2014}
-	\begin{itemize}
-		\item Worked as a part of a team and built a fully functional remotely operated underwater vehicle
-		\item Programmed the data collection and motor controller modules 
-	\end{itemize}
-	\item \ressubheading{Modern Mathematics International Summer School for students}{Bremen, Germany}{Mathematics summer school for high school and university students}{2013}
-\end{itemize}
-
-\resheading{Publications and conferences}
-\begin{itemize}
-	\item \ressubheading{Quantum algorithms for Second-Order Cone Programming and SVMs}{Salt Lake City, UT, USA}{Submitted to ACM-SIAM SODA20}{2020}
-	\begin{itemize}
-		\item Joint work with Iordanis Kerenidis and Anupam Prakash
-	\end{itemize}
-	\item \ressubheading{Quantum Algorithms for Portfolio Optimization}{Zurich, Switzerland}{Accepted at ACM AFT 2019}{2019}
-	\begin{itemize}
-		\item Joint work with Iordanis Kerenidis and Anupam Prakash
-	\end{itemize}
-	\item \ressubheading{Approximation algorithms for classical-quantum channel coding}{Lyon, France}{Presented at IEEE ISIT 2019}{2019}
-	\begin{itemize}
-		\item Joint work with Omar Fawzi, Johanna Seif
-	\end{itemize}
-	\item \ressubheading{Construction of an orthogonal CC-set}{Koper, Slovenia}{Middle-European Conference on Applied Theoretical Computer Science (MATCOS)}{2016}
-	\begin{itemize}
-		\item Joint work with Andrej Brodnik, Marko Palangetić, Vladan Jovičić
-		\item Published in Informatica 43, no. 1 (2019)
-	\end{itemize}
-	\item \ressubheading{Two Tales from the Applied Combinatorial Optimization}{Budapest, Hungary}{29th Conference of the European Chapter on Combinatorial Optimization}{2016}
-	\begin{itemize}
-		\item Presented as an invited talk by Andrej Brodnik
-		\item Joint work with Ajasja Ljubetič, Andrej Brodnik, Marko Palangetić, Roman Jerala, Vladan Jovičić
-	\end{itemize}
-\end{itemize}
-
-\resheading{Competitions and awards}
-\begin{itemize}
-	\item \ressubheading{NASA SpaceApps challenge}{Koper, Slovenia}{Global 48h programming hackathon, organized by NASA}{2016}
-	\begin{itemize}
-		\item Second place, qualified into the Central European round
-		\item Designed and built an end-to-end machine learning-based solution for predicting flight delays based on meteorological data
-		\item Joint work with Edin Husić, Marko Palangetić, Marko Prcać, Marko Rajković and Vladan Jovičić
-	\end{itemize}
-	\item \ressubheading{Russian Open Internet Olympiad}{Koper, Slovenia}{Bronze medal in computer science}{2016}
-	\item \ressubheading{ACM Central Europe Regional Contest}{Zagreb, Croatia}{Team programming competition}{2015-2016}
-	\item \ressubheading{University Programming Marathon}{Slovenia}{National qualifications for the ACM regionals}{2015 - present}
-		\begin{itemize}
-			\item University champion for 2015 and 2016
-		\end{itemize}
-	\item \ressubheading{Serbian national competitions}{Serbia}{Informatics, Mathematics, Physics}{2010 - 2014}
-	\begin{itemize}
-		\item Regularly competed in mathematics, physics and informatics competitions, up to the national level
-		\item \textbf{Informatics (Computer Science):} Serbian Olympiad in Informatics (2014 -- second prize, 2012, 2011 -- third prize), National Competition (2014, 2011 -- second prize, 2012 -- honorable mention)
-		\item \textbf{Mathematics:} National Competition 2012 -- honorable mention
-		\item \textbf{Physics:} National Competition 2012 -- honorable mention
-	\end{itemize}
-	\item \ressubheading{Diplomas at the end of High School}{Novi Sad, Serbia}{Awarded at the graduation ceremony}{2014}
-	\begin{itemize}
-		\item Vuk Karadžić award for 5.00/5.00 GPA
-		\item Special Diplomas for successfully participating mathematics, physics and computer science competitions during high school
-		\item Jovan Jovanović Zmaj plaque, awarded to the best student in the generation
-		\item Dušan Kešelj plaque, awarded to the most distinguished student in the area of informatics in the generation
-	\end{itemize}
-	\item \ressubheading{Energija Znanja scholarship}{Serbia}{One year monthly scholarship awarded by NIS}{2013 - 2014}
-	\item \ressubheading{KöMaL's informatics problem solving contest}{Budapest, Hungary}{Correspondence contest organized by KöMaL (Középiskolai Matematikai és Fizikai Lapok)}{2011 - 2013}
-	\begin{itemize}
-		\item Placed on the 5th place at the end of both 2012 and 2013
-		\item Invited twice to the annual conference organized at Eötvös Loránd Tudományegyetem (ELTE) for the best competitors in mathematics, informatics and physics
-	\end{itemize}
-	\item \ressubheading{Dositeja Award}{Serbia}{Awarded by the Ministry of Education for exceptional results at competitions}{2011, 2012}
-\end{itemize}
-\pagebreak
-\resheading{Skills}
-\begin{itemize}
-	\item \textbf{Theoretical Computer Science and Mathematics}, in particular discrete mathematics and \textbf{graph theory}, \textbf{optimization methods}, \textbf{quantum computing}
-	\item Working knowledge of various \textbf{programming languages}: C/C++, Python, C\#, Java, Pascal, SQL, Prolog, Assembler (x86 in particular), MATLAB, Mathematica
-	\item Strong knowledge of \textbf{data structures and algorithms}, as well as some background in \textbf{theoretical computer science}
-	\item \textbf{Other technologies}: \LaTeX, Unix administration, Git, Microsoft Office
-	\item \textbf{Piano} -- played it during elementary and higher education, obtained basic music theory knowledge
-	\item \textbf{Karate} -- blue belt (5th kyu)
-\end{itemize}
-
-\resheading{Languages}
-\begin{itemize}
-	\item \textbf{Serbian, Hungarian:} Native
-	\item \textbf{English:} Fluent (Cambridge CPE diploma, CEFR level C2)
-	\item \textbf{French:} Fluent
-	\item \textbf{Slovenian:} Fluent
-	\item \textbf{German, Russian} Basic
-\end{itemize}
-
+\section{Skills}
+\cvitem{Proficient}{C++, Python, Julia, \LaTeX, optimization methods, quantum computing, classical data structures and algorithms, machine learning}
+\cvitem{Experienced}{Teaching, MATLAB, Mathematica, \textsc{Unix} administration, Git}
+\cvitem{Skilled}{C\#, OCaml, probability, graph theory}
 \end{document}

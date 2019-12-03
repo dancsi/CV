@@ -14,6 +14,11 @@
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
+\usepackage[backend=bibtex,sorting=none]{biblatex}
+\addbibresource{publications.bib}
+\DeclareFieldFormat{labelnumberwidth}{}
+\setlength{\biblabelsep}{20pt}
+
 % personal data
 \name{Dániel}{Szilágyi}
 \title{Computer Science PhD student}
@@ -41,11 +46,9 @@
 \cventry{2015}{Teaching assistant}{}{Summer School of Science (S3), Croatia}{}{Mentored a team of 3 high school students for a Bluetooth indoor positioning science/engineering project}
 \cventry{2015}{Student job}{}{University of Primorska, Slovenia}{}{Worked as the embedded hardware/software specialist on the government-funded project titled ``Absorbtion of foreign substances in the sea''}
 
-\newpage
 % Publications
 \nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications} 
+\printbibliography[title=Publications]
 
 \section{Selected talks}
 \cventry{2019}{Workshop}{QUDATA meeting}{Bordeaux, France}{}{Talk title: ``Quantum machine learning''}

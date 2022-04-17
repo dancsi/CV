@@ -1,4 +1,6 @@
+% !TeX document-id = {0cae5821-94c6-4c38-a63a-14d7db06606a}
 % !TeX program = xelatex
+% !BIB program = biber
 % !TeX spellcheck = en_US
 \documentclass[11pt,a4paper,sans]{moderncv}
 
@@ -14,7 +16,7 @@
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
-\usepackage[sorting=none]{biblatex}
+\usepackage[backend=biber, sorting=none]{biblatex}
 \addbibresource{publications.bib}
 \DeclareFieldFormat{labelnumberwidth}{}
 \setlength{\biblabelsep}{20pt}
@@ -52,11 +54,13 @@
 \printbibliography[title=Publications]
 
 \section{Selected talks}
+\cventry{2021}{Workshop}{Recent Advances on Quantum Computing}{Paris, France}{}{Talk title: ``A Gradient Descent Perspective on Quantum Linear System Solvers''}
 \cventry{2019}{Workshop}{QUDATA meeting}{Bordeaux, France}{}{Talk title: ``Quantum machine learning''}
 \cventry{2019}{Workshop}{3rd IRIF-IQC join workshop}{Waterloo, Canada}{}{Talk title: ``Quantum algorithms for SOCP and SVM''}
 \cventry{2019}{Workshop}{2nd QuantAlgo workshop}{Amsterdam, Netherlands}{}{Talk title: ``Quantum algorithms for SOCP and SVM''}
 
 \section{Honors and awards}
+\cventry{2019--2022}{Scholarship}{IDEX Scholarship}{}{}{PhD scholarship for international students}
 \cventry{2017--2019}{Scholarship}{Ampère Excellence Scholarship}{}{}{Awarded to the best international students at ENS Lyon}
 \cventry{2016}{Competition}{NASA SpaceApps challenge}{Slovenia}{}{Won 2nd place as a team at the national round of a 48h data science hackathon}
 \cventry{2015--2017}{Competition}{University Programming Marathon}{Slovenia}{}{Three-times university champion at the national ACM ICPC qualifiers}
@@ -65,14 +69,15 @@
 \cventry{2011--2014}{Award}{Dositeja Award}{Serbia}{}{Awarded to the most successful competition participants}
 \cventry{2010--2014}{Competition}{Serbian national high school competitions}{}{}{Successfully competed at the national level in mathematics, physics and computer science}
 
-\newpage
 \section{Languages}
 \cvitemwithcomment{Native}{Serbian, Hungarian}{}
 \cvitemwithcomment{Fluent}{English, French, Slovene}{}
 \cvitemwithcomment{Basic}{German, Russian}{}
 
 \section{Skills}
-\cvitem{Proficient}{C++, Python, Julia, \LaTeX, optimization methods, quantum computing, classical data structures and algorithms, machine learning}
-\cvitem{Experienced}{Teaching, MATLAB, Mathematica, \textsc{Unix} administration, Git}
-\cvitem{Skilled}{C\#, OCaml, probability, graph theory}
+\subsection{Mathematics and Computer Science}
+\cvline{}{Optimization (convex and discrete), quantum computing, numerical analysis and approximation theory, classical data structures and algorithms, machine learning}
+\subsection{Programming languages and technologies}
+\cvline{Numerics}{Julia (+SciML ecosystem), Python (+SciPy ecosystem, PyTorch), MATLAB}
+\cvline{General}{C++, embedded development, OCaml, \LaTeX, \textsc{Unix} administration, Git}
 \end{document}

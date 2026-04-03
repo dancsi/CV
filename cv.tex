@@ -18,8 +18,16 @@
 
 \usepackage[backend=biber, sorting=none]{biblatex}
 \addbibresource{publications.bib}
-\DeclareFieldFormat{labelnumberwidth}{}
-\setlength{\biblabelsep}{20pt}
+%\DeclareFieldFormat{labelnumberwidth}{}
+%\setlength{\biblabelsep}{20pt}
+\defbibenvironment{bibliography}
+{\list
+	{\raisebox{0.25ex}{\tiny$\bullet$}}
+	{\setlength{\leftmargin}{1.2em}
+		\setlength{\labelsep}{0.4em}
+		\setlength{\itemsep}{0.8em}}}
+{\endlist}
+{\item}
 
 % personal data
 \name{Dániel}{Szilágyi}
